@@ -1,57 +1,54 @@
 {
-  "name": "my-ui-library",
-  "private": true,
-  "version": "0.0.0",
+  "name": "scrappy-ui",
+  "version": "1.0.2",
+  "description": "A simple, Tailwind-based React UI component library",
   "type": "module",
+  "main": "dist/scrappy-ui.cjs.js",
+  "module": "dist/scrappy-ui.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/scrappy-ui.esm.js",
+      "require": "./dist/scrappy-ui.cjs.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrogers23458/scrappy-ui"
+  },
+  "keywords": [
+    "react",
+    "ui-library",
+    "tailwind",
+    "storybook",
+    "components"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "publish": "npm run build && npm publish --access public"
   },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.0.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "vite-plugin-dts": "^4.5.0"
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.4",
-    "@eslint/js": "^9.19.0",
-    "@rollup/plugin-commonjs": "^28.0.2",
-    "@rollup/plugin-node-resolve": "^16.0.0",
-    "@storybook/addon-essentials": "^8.5.3",
-    "@storybook/addon-interactions": "^8.5.3",
-    "@storybook/addon-onboarding": "^8.5.3",
-    "@storybook/blocks": "^8.5.3",
-    "@storybook/builder-vite": "^8.5.3",
     "@storybook/react": "^8.5.3",
-    "@storybook/react-vite": "^8.5.3",
-    "@storybook/test": "^8.5.3",
+    "@tailwindcss/vite": "^4.0.6",
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.19.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.18",
-    "eslint-plugin-storybook": "^0.11.2",
-    "globals": "^15.14.0",
-    "postcss": "^8.5.2",
-    "rollup": "^4.34.6",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "storybook": "^8.5.3",
-    "tailwindcss": "^4.0.6",
     "typescript": "~5.7.2",
-    "typescript-eslint": "^8.22.0",
-    "vite": "^6.1.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "vite": "^6.1.0",
+    "vite-plugin-dts": "^4.5.0"
   }
 }
